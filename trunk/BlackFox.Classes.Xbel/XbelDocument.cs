@@ -22,6 +22,7 @@ using System.Xml;
 using System.Collections;
 
 [assembly:CLSCompliant(true)]
+
 namespace BlackFox.Classes.Xbel
 {
 	/// <summary>
