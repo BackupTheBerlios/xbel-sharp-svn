@@ -18,6 +18,10 @@
     <File name=".\Tests\IdTable.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
     <File name=".\Tests\ItemComparer.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
     <File name=".\Tests\MetadataProcessor.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GeneratedClasses\XbelMetadataCollection.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name=".\GeneratedClasses" subtype="Directory" buildaction="Compile" dependson="" data="" />
+    <File name=".\GeneratedClasses\XbelIdentifiedItemHashtable.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
   </Contents>
   <References>
     <Reference type="Gac" refto="nunit.framework, Version=2.1.4.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" localcopy="True" />

@@ -37,14 +37,11 @@ namespace BlackFox.Classes.Xbel
 		private string title = "";
 		private string desc = null;
 		
-		private ArrayList infos;
+		private XbelMetadataCollection infos;
 		/// <summary>
 		/// Host &lt;metadata&gt;s lments.
 		/// </summary>
-		/// <remarks>
-		/// /!\ Warning : the type will later be <c>List&lt;XbelMetadata&gt;</c> when generics are here.
-		/// </remarks>
-		public ArrayList Infos {
+		public XbelMetadataCollection Infos {
 			get {
 				return infos;
 			}
@@ -88,12 +85,12 @@ namespace BlackFox.Classes.Xbel
 		
 		protected XbelIdentifiedItem(XbelFolder parent) : base(parent)
 		{
-			infos = new ArrayList();
+			infos = new XbelMetadataCollection();
 		}
 		
 		protected XbelIdentifiedItem(XbelDocument doc) : base(doc)
 		{
-			infos = new ArrayList();
+			infos = new XbelMetadataCollection();
 		}
 		
 		#endregion

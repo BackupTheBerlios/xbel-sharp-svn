@@ -56,8 +56,6 @@ namespace BlackFox.Applications.XbelFirstTest
 
 			XbelDocument doc = new XbelDocument(xmldoc);
 			Console.WriteLine(doc.ToString());
-
-			Hashtable idtable = doc.IdTable;
 			//Console.WriteLine((idtable["xslt"] as XbelBookmark).Href);
 
 			/*************************************************/

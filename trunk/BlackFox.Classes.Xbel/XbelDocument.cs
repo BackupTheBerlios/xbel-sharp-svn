@@ -67,30 +67,33 @@ namespace BlackFox.Classes.Xbel
 		#region Id Table
 		
 		private bool idTableCacheIsValid = false;
-		private Hashtable idTableCache;
+		private XbelIdentifiedItemHashtable idTableCache;
 		
 		/// <summary>
 		/// A hashtable with all <see cref="XbelIdentifiedItem"/>s of the Document
 		/// with their id as Key.
 		/// Internaly used to resolve <see cref="XbelAlias"/> targets.
 		/// </summary>
-		public Hashtable IdTable
+		public XbelIdentifiedItemHashtable IdTable
 		{
 			get {
 				if (!idTableCacheIsValid) {
-					idTableCache = new Hashtable();
+					idTableCache = new XbelIdentifiedItemHashtable();
 					BuildIdTableForFolder(this, idTableCache);
 				}
 				return idTableCache;
 			}
 		}
 
-		private void BuildIdTableForFolder(XbelFolder folder, Hashtable idTable)
+		private void BuildIdTableForFolder(XbelFolder folder,
+		                                   XbelIdentifiedItemHashtable idTable)
 		{
 			foreach(XbelItem item in folder) {
 				if (item is XbelIdentifiedItem) {
-					if ((item as XbelIdentifiedItem).Id != "") {
-						idTable.Add((item as XbelIdentifiedItem).Id, item);
+					XbelIdentifiedItem identItem = item as XbelIdentifiedItem;
+					
+					if (identItem.Id != "") {
+						idTable.Add(identItem);
 					}
 				}
 				if (item is XbelFolder) {
