@@ -1,0 +1,16 @@
+<Combine fileversion="1.0" name="BlackFox.Classes.Xbel" description="">
+  <StartMode startupentry="BlackFox.Classes.Xbel" single="True">
+    <Execute entry="BlackFox.Classes.Xbel" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\.\BlackFox.Classes.Xbel.prjx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="BlackFox.Classes.Xbel" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="BlackFox.Classes.Xbel" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

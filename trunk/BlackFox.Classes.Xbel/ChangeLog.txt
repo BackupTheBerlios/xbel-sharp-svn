@@ -1,0 +1,13 @@
+30 06 2004 (Black Fox)
+ - Regions added to XbelDocument
+ - CleanAliases méthod added to XbelDocument
+ - New test fixture to test CleanAliases
+
+07 05 2004 (Black Fox)
+ - Made XbelDocment an XbelFolder
+ - Implemented <info/> and <metadata/>
+ - Now XbelDocument.IdTable cache data
+ - Created NUnit test fixtures
+
+01 05 2004 (Black Fox)
+ - Symbolic start of Project

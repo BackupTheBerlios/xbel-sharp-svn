@@ -1,0 +1,24 @@
+<Combine fileversion="1.0" name="Xbel#" description="">
+  <StartMode startupentry="BlackFox.Applications.Xbel.FirstTest" single="True">
+    <Execute entry="BlackFox.Classes.W3CDateTimeUtils" type="None" />
+    <Execute entry="BlackFox.Classes.Xbel" type="None" />
+    <Execute entry="BlackFox.Applications.Xbel.FirstTest" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename=".\W3CDateTime\W3CDateTime.prjx" />
+    <Entry filename=".\BlackFox.Classes.Xbel\BlackFox.Classes.Xbel.prjx" />
+    <Entry filename=".\BlackFox.Applications.Xbel.FirstTest\BlackFox.Applications.Xbel.FirstTest.prjx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="BlackFox.Classes.W3CDateTimeUtils" configurationname="Debug" build="False" />
+      <Entry name="BlackFox.Classes.Xbel" configurationname="Debug" build="False" />
+      <Entry name="BlackFox.Applications.Xbel.FirstTest" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="BlackFox.Classes.W3CDateTimeUtils" configurationname="Debug" build="False" />
+      <Entry name="BlackFox.Classes.Xbel" configurationname="Debug" build="False" />
+      <Entry name="BlackFox.Applications.Xbel.FirstTest" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>
