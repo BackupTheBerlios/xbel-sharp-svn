@@ -30,14 +30,14 @@ namespace BlackFox.Classes.Xbel
 	/// </summary>
 	public class XbelFolder : XbelIdentifiedItem, IEnumerable
 	{
+		#region Properties
 		public override string XmlElementName
 		{
 			get {
 				return "folder";
 			}
 		}
-		
-		public DateTime Added;
+
 		public XbelBoolean Folded = XbelBoolean.Unknown;
 		
 		private ArrayList m_items;
@@ -63,6 +63,10 @@ namespace BlackFox.Classes.Xbel
 			}
 		}
 		
+		#endregion
+		
+		#region Constructors & Init
+		
 		public XbelFolder(XbelFolder parent) : base(parent)
 		{
 			Init();
@@ -78,6 +82,8 @@ namespace BlackFox.Classes.Xbel
 			Added = new System.DateTime();
 			m_items = new ArrayList();
 		}
+		
+		#endregion
 		
 		public IEnumerator GetEnumerator()
 		{
@@ -153,6 +159,8 @@ namespace BlackFox.Classes.Xbel
 		}
 		
 		#endregion
+		
+		#region Old and Commented (Useless ???)
 		/*
 		internal void ResolveAliases(Hashtable IdTable)
 		{
@@ -178,6 +186,8 @@ namespace BlackFox.Classes.Xbel
 		}
 		*/
 		
+		#endregion
+		
 		#region Load & Save
 		
 		public override void LoadFromXmlNode(XmlNode node)
@@ -189,6 +199,7 @@ namespace BlackFox.Classes.Xbel
 			} else {
 				Folded = XbelBoolean.Unknown;
 			}
+			
 			Document.InvalidateIdTableCache();
 			LoadChildsFromXmlNode(node);
 		}
@@ -240,6 +251,8 @@ namespace BlackFox.Classes.Xbel
 		
 		#endregion
 		
+		#region ToString
+		
 		/// <summary>
 		/// Return a text version of the folder with all his childs nodes.
 		/// </summary>
@@ -254,5 +267,6 @@ namespace BlackFox.Classes.Xbel
 			
 			return Ret.ToString();
 		}
+		#endregion
 	}
 }

@@ -26,7 +26,7 @@ namespace BlackFox.Classes.Xbel
 	/// <summary>
 	/// An <see cref="XbelItem"/> identified with an Title and an Id, who could be refered
 	/// by an <see cref="XbelAlias"/>.
-	/// Identified Items are also the hosts for &ltinfo/&gt; and &lt;metadata&gt;.
+	/// Identified Items are also the hosts for &lt;info/&gt; and &lt;metadata&gt;.
 	/// </summary>
 	/// <remarks>
 	/// Corresponding items in XML : &lt;xbel&gt;, &lt;folder&gt;, &lt;bookmark&gt;
@@ -46,6 +46,18 @@ namespace BlackFox.Classes.Xbel
 				return infos;
 			}
 		}
+		
+		private DateTime added; // TODO: Need a way to be nullable (Ahhh... C# 2.0 "private DateTime? added;")
+		
+		public DateTime Added {
+			get {
+				return added;
+			}
+			set {
+				added = value;
+			}
+		}
+		
 		
 		/// <summary>
 		/// Unique identifier of the item.
@@ -100,11 +112,11 @@ namespace BlackFox.Classes.Xbel
 		private void SaveInfos(XmlElement element)
 		{
 			foreach (XbelMetadata metadata in infos) {
-				// Obtention des donns
+				// Obtention des donnés
 				XmlDocumentFragment df = element.OwnerDocument.CreateDocumentFragment();
 				metadata.SaveToXml(df);
 				
-				//Vrification
+				//Vérification
 				if ( (df.ChildNodes.Count > 1) || !(df.ChildNodes[0] is XmlElement) || (df.ChildNodes[0].Name != "metadata") ) {
 					throw InvalidProcessorXmlOutputException.Create(metadata, df.OuterXml);
 				}
@@ -148,6 +160,7 @@ namespace BlackFox.Classes.Xbel
 			} else {
 				desc = null;
 			}
+			if 
 			LoadInfos(node["info"]);
 		}
 		
@@ -163,8 +176,8 @@ namespace BlackFox.Classes.Xbel
 			}
 			
 			/*
-			 * Les descriptions ne sont retranscrites que si elles existaient et se rsumaient
-			 *  plus que des espaces ou autres chanes innutiles.
+			 * Les descriptions ne sont retranscrites que si elles existaient et se résumaient
+			 * à plus que des espaces ou autres chaines innutiles.
 			 */
 			if (desc != null && desc.Trim() != "") {
 				XmlElement descNode = node.OwnerDocument.CreateElement("desc");

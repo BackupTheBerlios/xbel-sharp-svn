@@ -47,7 +47,6 @@ namespace BlackFox.Classes
 		
 		public static DateTime W3CDateTimeToDateTime(String w3cDateTime)
 		{
-			Console.WriteLine("Toto");
 			DateTime dt;
 			
 			if (w3cDateTime.IndexOf('T') != -1) {

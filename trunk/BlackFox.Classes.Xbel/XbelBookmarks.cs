@@ -36,11 +36,30 @@ namespace BlackFox.Classes.Xbel
 		
 		public string Href = "";
 		public string Info = "";
-		//public string Desc = "";
 		
-		public DateTime Added;
-		public DateTime Modified;
-		public DateTime Visited;
+		#region Dates (Modified & Visited)
+		
+		private DateTime _modified;
+		public DateTime Modified {
+			get {
+				return _modified;
+			}
+			set {
+				_modified = value;
+			}
+		}
+		
+		private DateTime _visited;
+		public DateTime Visited {
+			get {
+				return _visited;
+			}
+			set {
+				_visited = value;
+			}
+		}
+		
+		#endregion
 
 		public XbelBookmark(XbelFolder Parent) : base(Parent)
 		{
@@ -65,6 +84,14 @@ namespace BlackFox.Classes.Xbel
 			
 			if (node.Attributes["href"] != null) {
 				Href = node.Attributes["href"].Value;
+			}
+			
+			if (node.Attributes["modified"] != null) {
+				_modified = W3CDateTimeUtils.W3CDateTimeToDateTime(node.Attributes["modified"].Value);
+			}
+			
+			if (node.Attributes["visited"] != null) {
+				_visited = W3CDateTimeUtils.W3CDateTimeToDateTime(node.Attributes["visited"].Value);
 			}
 		}
 		

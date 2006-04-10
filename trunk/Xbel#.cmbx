@@ -1,5 +1,5 @@
 <Combine fileversion="1.0" name="Xbel#" description="">
-  <StartMode startupentry="BlackFox.Applications.Xbel.FirstTest" single="True">
+  <StartMode startupentry="BlackFox.Classes.Xbel" single="True">
     <Execute entry="BlackFox.Classes.W3CDateTimeUtils" type="None" />
     <Execute entry="BlackFox.Classes.Xbel" type="None" />
     <Execute entry="BlackFox.Applications.Xbel.FirstTest" type="None" />

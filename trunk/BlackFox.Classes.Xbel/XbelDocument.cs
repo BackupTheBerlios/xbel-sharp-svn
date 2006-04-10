@@ -216,7 +216,7 @@ namespace BlackFox.Classes.Xbel
 			return metadataProcessor.GetProperty("Owner").GetGetMethod().Invoke(null, null) as string;
 		}
 		
-		/// <param name="Owner">The searched owner.</param>
+		/// <param name="owner">The searched owner.</param>
 		/// <returns>The Processor type if found, typeof(<see cref="XbelRawMetadata"/>) otherwise.</returns>
 		public Type FindMetadataProcessor(string owner)
 		{
